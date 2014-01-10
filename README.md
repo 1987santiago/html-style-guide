@@ -130,25 +130,25 @@ name: <input type="text">
 
 ## New attibutes 
 
-* **`autocomplete`** - only if the type attr isn't `hidden` `checkbox` `radio` `file` or button type `button` `submit` `reset` `image` 
-* **`pattern`** - A regular expression. Validate the input content when is used with tel, search, url, and email input types 
-* **`placeholder`** - A hint to the user of what can be entered in the control 
-* **`required`** - This attribute specifies that the user must fill in a value before submitting a form. *(not apply for hidden, image, submit, reset or button types)* 
+* `autocomplete` - *(only if the type attr isn't `hidden` `checkbox` `radio` `file` or button type `button` `submit` `reset` `image`)* 
+* `pattern` - A regular expression. Validate the input content when is used with tel, search, url, and email input types 
+* `placeholder` - A hint to the user of what can be entered in the control 
+* `required` - This attribute specifies that the user must fill in a value before submitting a form. *(not apply for hidden, image, submit, reset or button types)* 
 
 __Inputs__
 
-* **`list`** - The value must be the id of a `<datalist>` element in the same document 
+* `list` - The value must be the id of a `<datalist>` element in the same document 
 *(This attribute is ignored when the type attribute's value is hidden, checkbox, radio, file, or a button type)* 
-* **`form`** - A *String* indicating which `<form>` element this input is part of. An input can only be in one form. *(The value must be the id of a form)* 
-* **`formmethod`** - A *String* define which method (get/post) should be used when submitting. __It overrides the form method__, if defined. *(only applies for type image or submit, when the form attribute has been set)* 
-* **`formaction`** - A *String* define the URI should be used to processes the information. __It overrides the form action__, if defined. *(only applies for type image or submit, when the form attribute has been set)* 
+* `form` - A *String* indicating which `<form>` element this input is part of. An input can only be in one form. *(The value must be the id of a form)* 
+* `formmethod` - A *String* define which method (get/post) should be used when submitting. __It overrides the form method__, if defined. *(only applies for type image or submit, when the form attribute has been set)* 
+* `formaction` - A *String* define the URI should be used to processes the information. __It overrides the form action__, if defined. *(only applies for type image or submit, when the form attribute has been set)* 
 
 [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Browser_compatibility)
 
 ## New attibutes values 
 
 
-* For **`type`** attr  
+* For `type` attr  
 
 `email`
 `date`
@@ -159,7 +159,7 @@ __Inputs__
 `tel` 
 `url` 
 
-* For **`accept`** attr *(if type attr is `file`)*
+* For `accept` attr *(if type attr is `file`)*
 
 `audio`
 `image` 
