@@ -154,7 +154,7 @@ __Inputs__
 `date`
 `datetime`
 `number`
-`range
+`range`
 `search`  
 `tel` 
 `url` 
