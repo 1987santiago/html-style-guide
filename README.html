@@ -1,0 +1,274 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>README</title></head><body><h1 id="html-style-guide">html-style-guide</h1>
+<p>MercadoLibre HTML Style Guide</p>
+<h2 id="forms">Forms</h2>
+<h3 id="good-practices">Good practices</h3>
+<ul>
+<li>Specify form action</li>
+</ul>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;form&gt;...&lt;/form&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;form action=&quot;form-process.php&quot;&gt;...&lt;/form&gt;
+</code></pre>
+
+<ul>
+<li>Specify form method</li>
+</ul>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;form action=&quot;form-process.php&quot;&gt;...&lt;/form&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;form action=&quot;form-process.php&quot; method=&quot;post&quot;&gt;...&lt;/form&gt;
+</code></pre>
+
+<p><em>Methods</em> <code>post get</code></p>
+<ul>
+<li>Use submit input to send form data</li>
+</ul>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;input type=&quot;button&quot; value=&quot;Send&quot; onclick=&quot;sendForm();&quot;&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO'T --&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Send&quot;&gt;
+</code></pre>
+
+<ul>
+<li>Use reset input to clear form</li>
+</ul>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;input type=&quot;button&quot; value=&quot;Clear&quot; onclick=&quot;resetForm();&quot;&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;input type=&quot;reset&quot; value=&quot;Clear&quot;&gt;
+</code></pre>
+
+<ul>
+<li>Use <em>labels</em> to describe the role of the form element </li>
+</ul>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+name: &lt;input type=&quot;text&quot;&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;label&gt;name:&lt;/label&gt;&lt;input type=&quot;text&quot;&gt;
+</code></pre>
+
+<ul>
+<li>Asociate a label with the corresponding field</li>
+</ul>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;label&gt;name:&lt;/label&gt;&lt;input type=&quot;text&quot;&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;label for=&quot;name&quot;&gt;name:&lt;/label&gt;&lt;input id=&quot;name&quot; type=&quot;text&quot;&gt;
+</code></pre>
+
+<ul>
+<li>Add names to fields that will be sending in the submit action</li>
+</ul>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;input class=&quot;name&quot; id=&quot;userName&quot; type=&quot;text&quot;&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;input class=&quot;name&quot; id=&quot;userName&quot; name=&quot;userName&quot; type=&quot;text&quot;&gt;
+</code></pre>
+
+<ul>
+<li>Don't add names to the fields that will not be sending in the submit action</li>
+</ul>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;input class=&quot;pass&quot; id=&quot;userPass&quot; name=&quot;userPass&quot; type=&quot;password&quot;&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;input class=&quot;pass&quot; id=&quot;userPass&quot; type=&quot;text&quot;&gt;
+</code></pre>
+
+<ul>
+<li>Separate content by context</li>
+</ul>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;label&gt;name:&lt;/label&gt;&lt;input name=&quot;userName&quot; type=&quot;text&quot;&gt;
+&lt;label&gt;sex:&lt;/label&gt;&lt;input name=&quot;userSex&quot; type=&quot;radio&quot;&gt;&lt;input name=&quot;userSex&quot; type=&quot;radio&quot;&gt;
+&lt;label&gt;Transaction Number:&lt;/label&gt;&lt;input name=&quot;productNumTransaction&quot; type=&quot;text&quot;&gt;
+&lt;label&gt;Transaction Date:&lt;/label&gt;&lt;input name=&quot;productDateTransaction&quot; type=&quot;date&quot;&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;fieldset name=&quot;userData&quot;&gt;
+    &lt;label&gt;name:&lt;/label&gt;&lt;input name=&quot;name&quot; type=&quot;text&quot;&gt;
+    &lt;label&gt;sex:&lt;/label&gt;&lt;input name=&quot;sex&quot; type=&quot;radio&quot;&gt;&lt;input name=&quot;sex&quot; type=&quot;radio&quot;&gt;
+&lt;/fieldset&gt;
+&lt;fieldset name=&quot;productData&quot;&gt;
+    &lt;label&gt;Transaction Number:&lt;/label&gt;&lt;input name=&quot;numTransaction&quot; type=&quot;text&quot;&gt;
+    &lt;label&gt;Transaction Date:&lt;/label&gt;&lt;input name=&quot;dateTransaction&quot; type=&quot;date&quot;&gt;
+&lt;/fieldset&gt;
+</code></pre>
+
+<h2 id="new-attibutes">New attibutes</h2>
+<ul>
+<li><strong><code>autocomplete</code></strong> - only if the type attr isn't <code>hidden</code> <code>checkbox</code> <code>radio</code> <code>file</code> or button type <code>button</code> <code>submit</code> <code>reset</code> <code>image</code></li>
+<li><strong><code>pattern</code></strong> - A regular expression. Validate the input content when is used with tel, search, url, and email input types</li>
+<li><strong><code>placeholder</code></strong> - A hint to the user of what can be entered in the control</li>
+<li><strong><code>required</code></strong> - This attribute specifies that the user must fill in a value before submitting a form. <em>(not apply for hidden, image, submit, reset or button types)</em></li>
+</ul>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><strong><code>list</code></strong> - The value must be the id of a <code>&lt;datalist&gt;</code> element in the same document
+<em>(This attribute is ignored when the type attribute's value is hidden, checkbox, radio, file, or a button type)</em></li>
+<li><strong><code>form</code></strong> - A <em>String</em> indicating which <code>&lt;form&gt;</code> element this input is part of. An input can only be in one form. <em>(The value must be the id of a form)</em></li>
+<li><strong><code>formmethod</code></strong> - A <em>String</em> define which method (get/post) should be used when submitting. <strong>It overrides the form method</strong>, if defined. <em>(only applies for type image or submit, when the form attribute has been set)</em></li>
+<li><strong><code>formaction</code></strong> - A <em>String</em> define the URI should be used to processes the information. <strong>It overrides the form action</strong>, if defined. <em>(only applies for type image or submit, when the form attribute has been set)</em></li>
+</ul>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Browser_compatibility">Browser compatibility</a></p>
+<h2 id="new-attibutes-values">New attibutes values</h2>
+<ul>
+<li>For <strong><code>type</code></strong> attr  </li>
+</ul>
+<p><code>email</code>
+<code>date</code>
+<code>datetime</code>
+<code>number</code>
+<code>range</code>search<code></code>tel<code></code>url` </p>
+<ul>
+<li>For <strong><code>accept</code></strong> attr <em>(if type attr is <code>file</code>)</em></li>
+</ul>
+<p><code>audio</code>
+<code>image</code> 
+<code>video</code></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Browser_compatibility">Browser compatibility</a></p>
+<h4 id="bibliografia">Bibliografía</h4>
+<p><em><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/</a></em>
+<em><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms</a></em>
+<em><a href="http://www.w3.org/TR/html401/interact/forms.html">http://www.w3.org/TR/html401/interact/forms.html</a></em>
+<em><a href="http://www.tutorialspoint.com/html5/">http://www.tutorialspoint.com/html5/</a></em>
+<em><a href="http://html5doctor.com/">http://html5doctor.com/</a></em></p></body></html>

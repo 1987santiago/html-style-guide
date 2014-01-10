@@ -3,104 +3,177 @@ html-style-guide
 
 MercadoLibre HTML Style Guide
 
+## Forms
 
-// Usar labels asociados a los inputs
+### Good practices
 
-Don't
-name: <input type="text" />
+* Specify form action
 
-Do
-<label>name:</label><input type="text" />
-
-
-// Asociar el label con el campo correspondiente
-
-Don't
-<label>name:</label><input type="text" />
-
-Do
-<label for="name">name;</label><input id="name" type="text" />
-
-
-// Asignar names a los campos que se deseen enviar en el submit del formulario
-
-Don't
-<input class="name" id="clientName" type="text" />
-
-Do
-<input class="name" id="clientName" name="client.name" type="text" /> <!-- client.name || clientName || client-name --> ?
-
-Don't
-<input class="pass" id="clientPass" name="client.pass" type="password" /> <!-- client.pass || clientPass || client-pass --> ?
-
-Do
-<input class="pass" id="clientPass" type="text" />
-
-
-// Separar el contenido seg˙n su contexto
-
-Don't
-<label for="name">name:</label><input id="name" type="text" />
-<label for="sex">sex:</label><input id="female" name="sex" type="radio" /><input id="male" name="sex" type="radio" />
-<label for="numDoc">Document number:</label><input id="numDoc" type="text" />
-<label for="numTransaction">Transaction Number:</label><input id="numTransaction" type="text" />
-<label for="dateTransaction">Transaction Date:</label><input id="dateTransaction" type="date" />
-
-Do
-<fieldset name="client.data">
-	<label for="name">name:</label><input id="name" type="text" />
-	<label for="sex">sex:</label><input id="female" name="sex" type="radio" /><input id="male" name="sex" type="radio" />
-	<label for="numDoc">Document number:</label><input id="numDoc" type="text" />
-</fieldset>
-<fieldset name="product.data">
-	<label for="numTransaction">Transaction Number:</label><input id="numTransaction" type="text" />
-	<label for="dateTransaction">Transaction Date:</label><input id="dateTransaction" type="date" />
-</fieldset>
-
-
-// Especificar un action en el formulario
-
-Don't
+```html
+<!-- DON'T -->
 <form>...</form>
+```
 
-Do
+```html
+<!-- DO -->
 <form action="form-process.php">...</form>
+```
 
+* Specify form method
 
-// Especificar un metodo en el formulario
-
-Don't
+```html
+<!-- DON'T -->
 <form action="form-process.php">...</form>
+```
 
-Do
+```html
+<!-- DO -->
 <form action="form-process.php" method="post">...</form>
+```
+_Methods_ `post get `
 
 
-// Usar submits para el envÌo de los datos del formulario
+* Use submit input to send form data
 
-Don't
-<input type="button" value="Send" onclick="sendForm();" />
+```html
+<!-- DON'T -->
+<input type="button" value="Send" onclick="sendForm();">
+```
 
-Do
-<input type="submit" value="Send" />
+```html
+<!-- DO'T -->
+<input type="submit" value="Send">
+```
+
+* Use reset input to clear form
+
+```html
+<!-- DON'T -->
+<input type="button" value="Clear" onclick="resetForm();">
+```
+
+```html
+<!-- DO -->
+<input type="reset" value="Clear">
+```
+
+* Use *labels* to describe the role of the form element 
+
+```html
+<!-- DON'T -->
+name: <input type="text">
+```
+
+```html
+<!-- DO -->
+<label>name:</label><input type="text">
+```
+
+* Asociate a label with the corresponding field
+
+```html
+<!-- DON'T -->
+<label>name:</label><input type="text">
+```
+
+```html
+<!-- DO -->
+<label for="name">name:</label><input id="name" type="text">
+```
+
+* Add names to fields that will be sending in the submit action
+
+```html
+<!-- DON'T -->
+<input class="name" id="userName" type="text">
+```
+
+```html
+<!-- DO -->
+<input class="name" id="userName" name="userName" type="text">
+```
+
+* Don't add names to the fields that will not be sending in the submit action
+
+```html
+<!-- DON'T -->
+<input class="pass" id="userPass" name="userPass" type="password">
+```
+
+```html
+<!-- DO -->
+<input class="pass" id="userPass" type="text">
+```
+
+* Separate content by context
+
+```html
+<!-- DON'T -->
+<label>name:</label><input name="userName" type="text">
+<label>sex:</label><input name="userSex" type="radio"><input name="userSex" type="radio">
+<label>Transaction Number:</label><input name="productNumTransaction" type="text">
+<label>Transaction Date:</label><input name="productDateTransaction" type="date">
+```
+
+```html
+<!-- DO -->
+<fieldset name="userData">
+	<label>name:</label><input name="name" type="text">
+	<label>sex:</label><input name="sex" type="radio"><input name="sex" type="radio">
+</fieldset>
+<fieldset name="productData">
+	<label>Transaction Number:</label><input name="numTransaction" type="text">
+	<label>Transaction Date:</label><input name="dateTransaction" type="date">
+</fieldset>
+```
 
 
-// Usar resets para borrar el contenido del formulario
+## New attibutes 
 
-Don't
-<input type="button" value="Clear" onclick="resetForm();" />
+* __`autocomplete`__ - only if the type attr isn't `hidden` `checkbox` `radio` `file` or button type `button` `submit` `reset` `image`
+* __`pattern`__ - A regular expression. Validate the input content when is used with tel, search, url, and email input types
+* __`placeholder`__ - A hint to the user of what can be entered in the control
+* __`required`__ - This attribute specifies that the user must fill in a value before submitting a form. *(not apply for hidden, image, submit, reset or button types)*
 
-Do
-<input type="reset" value="Clear" />
+__Inputs__
+
+* __`list`__ - The value must be the id of a `<datalist>` element in the same document
+*(This attribute is ignored when the type attribute's value is hidden, checkbox, radio, file, or a button type)*
+* __`form`__ - A *String* indicating which `<form>` element this input is part of. An input can only be in one form. *(The value must be the id of a form)*
+* __`formmethod`__ - A *String* define which method (get/post) should be used when submitting. __It overrides the form method__, if defined. *(only applies for type image or submit, when the form attribute has been set)*
+* __`formaction`__ - A *String* define the URI should be used to processes the information. __It overrides the form action__, if defined. *(only applies for type image or submit, when the form attribute has been set)*
+
+[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Browser_compatibility)
+
+## New attibutes values 
+
+
+* For __`type`__ attr  
+
+`email`
+`date`
+`datetime`
+`number`
+`range
+`search`  
+`tel` 
+`url` 
+
+* For __`accept`__ attr *(if type attr is `file`)*
+
+`audio`
+`image` 
+`video`
+
+[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Browser_compatibility)
 
 
 
 
 
-
-// BibliografÌa
-https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/
-https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms
-http://www.w3.org/TR/html401/interact/forms.html
-http://www.tutorialspoint.com/html5/
-http://html5doctor.com/
+#### Bibliografía
+*[https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/)*
+*[https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms)*
+*[http://www.w3.org/TR/html401/interact/forms.html](http://www.w3.org/TR/html401/interact/forms.html)*
+*[http://www.tutorialspoint.com/html5/](http://www.tutorialspoint.com/html5/)*
+*[http://html5doctor.com/](http://html5doctor.com/)*
