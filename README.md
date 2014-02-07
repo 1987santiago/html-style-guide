@@ -7,6 +7,24 @@ MercadoLibre HTML Style Guide
 
 ### Good practices
 
+* Don`t use form elements outside from this context
+
+```html
+<!-- DON'T -->
+<body>
+	<input value="someValue" type="hidden">
+</body>
+```
+
+```html
+<!-- DO -->
+<body>
+	<form>
+		<input value="someValue" type="hidden">
+	</form>
+</body>
+```
+
 * Specify form action
 
 ```html
@@ -41,7 +59,7 @@ _Methods_ `post get `
 ```
 
 ```html
-<!-- DO'T -->
+<!-- DO -->
 <input type="submit" value="Send">
 ```
 
@@ -125,6 +143,143 @@ name: <input type="text">
 	<label>Transaction Number:</label><input name="numTransaction" type="text">
 	<label>Transaction Date:</label><input name="dateTransaction" type="date">
 </fieldset>
+```
+
+### Generic FORM example
+
+<form action="/processData.php" method="post">
+	<fieldset>
+		<legend>Personal information</legend>
+		<div>
+			<label for="firstName">First name:</label>
+			<input id="firstName" name="firstname" type="text">
+		</div>
+		<div>
+			<label for="lastName">Last name:</label>
+			<input id="lastName" name="lastname" type="text">
+		</div>
+		<div>
+			<label for="male">Sex:</label>
+			<input id="male" name="sex" value="male" type="radio">
+			<label for="male">Male</label>
+			<input id="female" name="sex" value="female" type="radio">
+			<label for="female">Female</label>
+		</div>
+		<div>
+			<label for="birthDate">Birth date:</label>
+			<input id="birthDate" name="birthdate" type="date">
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Other Information</legend>
+		<div>
+			<label for="someInfo">Some info:</label>
+			<input id="someInfo" name="someinfo" type="text">
+		</div>
+		<div>
+			<label for="selectEg">Select example:</label>
+			<select id="selectEg" name="selecteg">
+				<option>option 1</option>
+				<option>option 2</option>
+				<option>option 3</option>
+				<optgroup label="optgroup 1">
+					<option>option 4.1</option>
+					<option>option 4.2</option>
+					<option>option 4.3</option>
+				</optgroup>
+				<option>option 5</option>
+				<option>option 6</option>
+				<optgroup label="optgroup 2 disabled" disabled><!-- In XHTML, attribute minimization is forbidden, and the disabled attribute must be defined as <optgroup disabled="disabled"> --> 
+					<option>option 7.1</option>
+					<option>option 7.2</option>
+					<option>option 7.3</option>
+					<option>option 7.4</option>
+				</optgroup>
+			</select>
+		</div>
+		<div>
+			<input id="check1" name="checkbox1" value="example1" type="checkbox">
+			<label for="check1">checkbox 1:</label>
+			<input id="check2" name="checkbox2" value="example2" type="checkbox">
+			<label for="check2">checkbox 2:</label>
+			<input id="check3" name="checkbox3" value="example4" type="checkbox">
+			<label for="check3">checkbox 3:</label>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Action Buttons</legend>
+		<input value="Send" type="submit">
+		<input value="reset form" type="reset">
+	</fieldset>
+</form>
+
+#### _Code_
+```hrml
+<form action="/processData.php" method="post">
+	<fieldset>
+		<legend>Personal information</legend>
+		<div>
+			<label for="firstName">First name:</label>
+			<input id="firstName" name="firstname" type="text">
+		</div>
+		<div>
+			<label for="lastName">Last name:</label>
+			<input id="lastName" name="lastname" type="text">
+		</div>
+		<div>
+			<label for="male">Sex:</label>
+			<input id="male" name="sex" value="male" type="radio">
+			<label for="male">Male</label>
+			<input id="female" name="sex" value="female" type="radio">
+			<label for="female">Female</label>
+		</div>
+		<div>
+			<label for="birthDate">Birth date:</label>
+			<input id="birthDate" name="birthdate" type="date">
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Other Information</legend>
+		<div>
+			<label for="someInfo">Some info:</label>
+			<input id="someInfo" name="someinfo" type="text">
+		</div>
+		<div>
+			<label for="selectEg">Select example:</label>
+			<select id="selectEg" name="selecteg">
+				<option>option 1</option>
+				<option>option 2</option>
+				<option>option 3</option>
+				<optgroup label="optgroup 1">
+					<option>option 4.1</option>
+					<option>option 4.2</option>
+					<option>option 4.3</option>
+				</optgroup>
+				<option>option 5</option>
+				<option>option 6</option>
+				<optgroup label="optgroup 2 disabled" disabled><!-- In XHTML, attribute minimization is forbidden, and the disabled attribute must be defined as <optgroup disabled="disabled"> --> 
+					<option>option 7.1</option>
+					<option>option 7.2</option>
+					<option>option 7.3</option>
+					<option>option 7.4</option>
+				</optgroup>
+			</select>
+		</div>
+		<div>
+			<input id="check1" name="checkbox1" value="example1" type="checkbox">
+			<label for="check1">checkbox 1:</label>
+			<input id="check2" name="checkbox2" value="example2" type="checkbox">
+			<label for="check2">checkbox 2:</label>
+			<input id="check3" name="checkbox3" value="example4" type="checkbox">
+			<label for="check3">checkbox 3:</label>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Action Buttons</legend>
+		<input value="Send" type="submit">
+		<input value="reset form" type="reset">
+	</fieldset>
+</form>
 ```
 
 

@@ -125,6 +125,23 @@ body{font-size:16px;}
 <h2 id="forms">Forms</h2>
 <h3 id="good-practices">Good practices</h3>
 <ul>
+<li>Don`t use form elements outside from this context</li>
+</ul>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;body&gt;
+    &lt;input value=&quot;someValue&quot; type=&quot;hidden&quot;&gt;
+&lt;/body&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        &lt;input value=&quot;someValue&quot; type=&quot;hidden&quot;&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+</code></pre>
+
+<ul>
 <li>Specify form action</li>
 </ul>
 <pre><code class="html">&lt;!-- DON'T --&gt;
@@ -154,7 +171,7 @@ body{font-size:16px;}
 &lt;input type=&quot;button&quot; value=&quot;Send&quot; onclick=&quot;sendForm();&quot;&gt;
 </code></pre>
 
-<pre><code class="html">&lt;!-- DO'T --&gt;
+<pre><code class="html">&lt;!-- DO --&gt;
 &lt;input type=&quot;submit&quot; value=&quot;Send&quot;&gt;
 </code></pre>
 
@@ -234,6 +251,141 @@ name: &lt;input type=&quot;text&quot;&gt;
 &lt;/fieldset&gt;
 </code></pre>
 
+<h3 id="generic-form-example">Generic FORM example</h3>
+<form action="/processData.php" method="post">
+    <fieldset>
+        <legend>Personal information</legend>
+        <div>
+            <label for="firstName">First name:</label>
+            <input id="firstName" name="firstname" type="text">
+        </div>
+        <div>
+            <label for="lastName">Last name:</label>
+            <input id="lastName" name="lastname" type="text">
+        </div>
+        <div>
+            <label for="male">Sex:</label>
+            <input id="male" name="sex" value="male" type="radio">
+            <label for="male">Male</label>
+            <input id="female" name="sex" value="female" type="radio">
+            <label for="female">Female</label>
+        </div>
+        <div>
+            <label for="birthDate">Birth date:</label>
+            <input id="birthDate" name="birthdate" type="date">
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Other Information</legend>
+        <div>
+            <label for="someInfo">Some info:</label>
+            <input id="someInfo" name="someinfo" type="text">
+        </div>
+        <div>
+            <label for="selectEg">Select example:</label>
+            <select id="selectEg" name="selecteg">
+                <option>option 1</option>
+                <option>option 2</option>
+                <option>option 3</option>
+                <optgroup label="optgroup 1">
+                    <option>option 4.1</option>
+                    <option>option 4.2</option>
+                    <option>option 4.3</option>
+                </optgroup>
+                <option>option 5</option>
+                <option>option 6</option>
+                <optgroup label="optgroup 2 disabled" disabled><!-- In XHTML, attribute minimization is forbidden, and the disabled attribute must be defined as <optgroup disabled="disabled"> --> 
+                    <option>option 7.1</option>
+                    <option>option 7.2</option>
+                    <option>option 7.3</option>
+                    <option>option 7.4</option>
+                </optgroup>
+            </select>
+        </div>
+        <div>
+            <input id="check1" name="checkbox1" value="example1" type="checkbox">
+            <label for="check1">checkbox 1:</label>
+            <input id="check2" name="checkbox2" value="example2" type="checkbox">
+            <label for="check2">checkbox 2:</label>
+            <input id="check3" name="checkbox3" value="example4" type="checkbox">
+            <label for="check3">checkbox 3:</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Action Buttons</legend>
+        <input value="Send" type="submit">
+        <input value="reset form" type="reset">
+    </fieldset>
+</form>
+
+<h4 id="code"><em>Code</em></h4>
+<pre><code class="hrml">&lt;form action=&quot;/processData.php&quot; method=&quot;post&quot;&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Personal information&lt;/legend&gt;
+        &lt;div&gt;
+            &lt;label for=&quot;firstName&quot;&gt;First name:&lt;/label&gt;
+            &lt;input id=&quot;firstName&quot; name=&quot;firstname&quot; type=&quot;text&quot;&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for=&quot;lastName&quot;&gt;Last name:&lt;/label&gt;
+            &lt;input id=&quot;lastName&quot; name=&quot;lastname&quot; type=&quot;text&quot;&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for=&quot;male&quot;&gt;Sex:&lt;/label&gt;
+            &lt;input id=&quot;male&quot; name=&quot;sex&quot; value=&quot;male&quot; type=&quot;radio&quot;&gt;
+            &lt;label for=&quot;male&quot;&gt;Male&lt;/label&gt;
+            &lt;input id=&quot;female&quot; name=&quot;sex&quot; value=&quot;female&quot; type=&quot;radio&quot;&gt;
+            &lt;label for=&quot;female&quot;&gt;Female&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for=&quot;birthDate&quot;&gt;Birth date:&lt;/label&gt;
+            &lt;input id=&quot;birthDate&quot; name=&quot;birthdate&quot; type=&quot;date&quot;&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Other Information&lt;/legend&gt;
+        &lt;div&gt;
+            &lt;label for=&quot;someInfo&quot;&gt;Some info:&lt;/label&gt;
+            &lt;input id=&quot;someInfo&quot; name=&quot;someinfo&quot; type=&quot;text&quot;&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for=&quot;selectEg&quot;&gt;Select example:&lt;/label&gt;
+            &lt;select id=&quot;selectEg&quot; name=&quot;selecteg&quot;&gt;
+                &lt;option&gt;option 1&lt;/option&gt;
+                &lt;option&gt;option 2&lt;/option&gt;
+                &lt;option&gt;option 3&lt;/option&gt;
+                &lt;optgroup label=&quot;optgroup 1&quot;&gt;
+                    &lt;option&gt;option 4.1&lt;/option&gt;
+                    &lt;option&gt;option 4.2&lt;/option&gt;
+                    &lt;option&gt;option 4.3&lt;/option&gt;
+                &lt;/optgroup&gt;
+                &lt;option&gt;option 5&lt;/option&gt;
+                &lt;option&gt;option 6&lt;/option&gt;
+                &lt;optgroup label=&quot;optgroup 2 disabled&quot; disabled&gt;&lt;!-- In XHTML, attribute minimization is forbidden, and the disabled attribute must be defined as &lt;optgroup disabled=&quot;disabled&quot;&gt; --&gt; 
+                    &lt;option&gt;option 7.1&lt;/option&gt;
+                    &lt;option&gt;option 7.2&lt;/option&gt;
+                    &lt;option&gt;option 7.3&lt;/option&gt;
+                    &lt;option&gt;option 7.4&lt;/option&gt;
+                &lt;/optgroup&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;input id=&quot;check1&quot; name=&quot;checkbox1&quot; value=&quot;example1&quot; type=&quot;checkbox&quot;&gt;
+            &lt;label for=&quot;check1&quot;&gt;checkbox 1:&lt;/label&gt;
+            &lt;input id=&quot;check2&quot; name=&quot;checkbox2&quot; value=&quot;example2&quot; type=&quot;checkbox&quot;&gt;
+            &lt;label for=&quot;check2&quot;&gt;checkbox 2:&lt;/label&gt;
+            &lt;input id=&quot;check3&quot; name=&quot;checkbox3&quot; value=&quot;example4&quot; type=&quot;checkbox&quot;&gt;
+            &lt;label for=&quot;check3&quot;&gt;checkbox 3:&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Action Buttons&lt;/legend&gt;
+        &lt;input value=&quot;Send&quot; type=&quot;submit&quot;&gt;
+        &lt;input value=&quot;reset form&quot; type=&quot;reset&quot;&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre>
+
 <h2 id="new-attibutes">New attibutes</h2>
 <ul>
 <li><code>autocomplete</code> - <em>(only if the type attr isn't <code>hidden</code> <code>checkbox</code> <code>radio</code> <code>file</code> or button type <code>button</code> <code>submit</code> <code>reset</code> <code>image</code>)</em> </li>
@@ -258,7 +410,10 @@ name: &lt;input type=&quot;text&quot;&gt;
 <code>date</code>
 <code>datetime</code>
 <code>number</code>
-<code>range</code>search<code></code>tel<code></code>url` </p>
+<code>range</code>
+<code>search</code><br />
+<code>tel</code> 
+<code>url</code> </p>
 <ul>
 <li>For <code>accept</code> attr <em>(if type attr is <code>file</code>)</em></li>
 </ul>
