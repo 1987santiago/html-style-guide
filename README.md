@@ -7,7 +7,7 @@ MercadoLibre HTML Style Guide
 
 ### Good practices
 
-* Don`t use form elements outside from this context
+* Don't use form elements outside from this context
 
 ```html
 <!-- DON'T -->
