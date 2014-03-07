@@ -148,7 +148,7 @@ name: <input type="text">
 ### Generic FORM example
 
 #### _Code_
-```hrml
+```html
 <form action="/processData.php" method="post">
 	<fieldset>
 		<legend>Personal information</legend>

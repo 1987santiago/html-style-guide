@@ -1,0 +1,215 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>ANCHORS</title></head><body><h1 id="html-style-guide">html-style-guide</h1>
+<p>MercadoLibre HTML Style Guide</p>
+<h2 id="anchors">Anchors</h2>
+<h3 id="description">Description</h3>
+<ul>
+<li>Define un ancla y puede ser usado como vínculo a otro documento, como un marcador, o como ambos.</li>
+</ul>
+<h3 id="attibutes">Attibutes</h3>
+<p><ul>
+<li><a href="#href">href</a></li>
+<li><a href="#title">title</a></li>
+<li><a href="#id">id</a></li>
+<li><a href="#name">name</a></li>
+<li><a href="#class">class</a></li>
+<li><a href="#target">[target]</a> - http://www.w3.org/TR/html4/types.html#h-6.16</li>
+<li><a href="#type">[type]</a></li>
+<li><a href="#rel">[rel]</a></li>
+<li><a href="#rev">[rev]</a></li>
+</ul></p>
+<h3 id="basic-implement">Basic implement</h3>
+<p>Specific <code>href</code> and <code>title</code> attributes</p>
+<pre><code class="html">&lt;a href=&quot;https://github.com/mercadolibre/html-style-guide&quot; title=&quot;Ir a la guía de html&quot; &gt;html-style-guide&lt;/a&gt;
+</code></pre>
+
+<h3 id="uso-de-data-attributes">Uso de data attributes</h3>
+<pre><code class="html">&lt;a href=&quot;http://url.original&quot; data-some-data=&quot;sting-data&quot; title=&quot;link with data attr&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<h3 id="good-practices">Good Practices</h3>
+<p>Anchors don't have auto close tag</p>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;a href=&quot;url&quot; title=&quot;title-text&quot; /&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;a href=&quot;url&quot; title=&quot;title-text&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<p>Always specific a title attribute</p>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;a href=&quot;url&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;a href=&quot;url&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<p>Never use other element if you want link any info</p>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;span id=&quot;link&quot; onclick=&quot;window.open('url')&quot; &gt;&lt;/span&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;a href=&quot;url&quot; title=&quot;title-link&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<p>Always define a url and prevent it from javascript</p>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;a href=&quot;javscript:void();&quot; &gt;&lt;/a&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;a href=&quot;http://www.url.bla&quot; title=&quot;title-link&quot;&gt;&lt;/a&gt;
+and prevent event on click this
+</code></pre>
+
+<p>Link info inside our content example</p>
+<pre><code class="html">&lt;a href=&quot;#idReference&quot; title=&quot;Go to Reference&quot;&gt;Go to Reference&lt;/a&gt;
+(...our html content...)
+&lt;section id=&quot;idReference&quot;&gt;&lt;/section&gt;
+</code></pre>
+
+<h3 id="attibutes-desription">Attibutes desription</h3>
+<h4 id="target">Target</h4>
+<p><span id="target"></span></p>
+<h6 id="possible-values">Possible values</h6>
+<ul>
+<li><code>_blank</code> - <em>Open linked document in new windows or tab</em></li>
+<li><code>_self</code> - <em>It's a default, open linked document in the same context</em></li>
+<li><code>_parent</code> - <em>Open linked document in the parent frame</em></li>
+<li><code>_top</code> - <em>Open linked document in the top level of current context frame</em></li>
+</ul>
+<h4 id="bibliografia">Bibliografía</h4>
+<p>http://www.htmlquick.com/es/reference/tags/a.html
+http://www.htmlquick.com/es/reference/mime-types.html
+http://www.htmlquick.com/es/reference/types.html#frame-target
+http://stackoverflow.com/questions/11009597/correct-implementation-of-anchor-tag
+http://line25.com/articles/10-html-tag-crimes-you-really-shouldnt-commit
+http://stackoverflow.com/questions/134845/href-attribute-for-javascript-links-or-javascriptvoid0
+http://moz.com/learn/seo/anchor-text
+http://www.w3.org/TR/html4/types.html#h-6.16
+http://stackoverflow.com/questions/4964130/target-blank-vs-target-new
+http://www.w3.org/html/wg/drafts/html/master/Overview.html</p></body></html>
