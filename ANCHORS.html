@@ -125,26 +125,23 @@ body{font-size:16px;}
 <h2 id="anchors">Anchors</h2>
 <h3 id="description">Description</h3>
 <ul>
-<li>Define un ancla y puede ser usado como vínculo a otro documento, como un marcador, o como ambos.</li>
+<li>Defines an anchor and can be used as a link to another document, such as a marker, or both.</li>
 </ul>
 <h3 id="attibutes">Attibutes</h3>
-<p><ul>
-<li><a href="#href">href</a></li>
-<li><a href="#title">title</a></li>
-<li><a href="#id">id</a></li>
-<li><a href="#name">name</a></li>
-<li><a href="#class">class</a></li>
-<li><a href="#target">[target]</a> - http://www.w3.org/TR/html4/types.html#h-6.16</li>
-<li><a href="#type">[type]</a></li>
-<li><a href="#rel">[rel]</a></li>
-<li><a href="#rev">[rev]</a></li>
-</ul></p>
+<p><a href="#href"><code>href</code></a>
+<a href="#title"><code>title</code></a>
+<a href="#id"><code>id</code></a>
+<a href="#name"><code>name</code></a>
+<a href="#class"><code>class</code></a>
+<a href="#target"><code>target</code></a>
+<a href="#type"><code>type</code></a>
+<a href="#rel"><code>rel</code></a></p>
 <h3 id="basic-implement">Basic implement</h3>
 <p>Specific <code>href</code> and <code>title</code> attributes</p>
-<pre><code class="html">&lt;a href=&quot;https://github.com/mercadolibre/html-style-guide&quot; title=&quot;Ir a la guía de html&quot; &gt;html-style-guide&lt;/a&gt;
+<pre><code class="html">&lt;a href=&quot;https://github.com/mercadolibre/html-style-guide&quot; title=&quot;Go to html style guide&quot; &gt;html-style-guide&lt;/a&gt;
 </code></pre>
 
-<h3 id="uso-de-data-attributes">Uso de data attributes</h3>
+<h3 id="implement-data-attributes">Implement data attributes</h3>
 <pre><code class="html">&lt;a href=&quot;http://url.original&quot; data-some-data=&quot;sting-data&quot; title=&quot;link with data attr&quot;&gt;&lt;/a&gt;
 </code></pre>
 
@@ -158,7 +155,8 @@ body{font-size:16px;}
 &lt;a href=&quot;url&quot; title=&quot;title-text&quot;&gt;&lt;/a&gt;
 </code></pre>
 
-<p>Always specific a title attribute</p>
+<p><a name="title"></a>
+Always specific a title attribute</p>
 <pre><code class="html">&lt;!-- DON'T --&gt;
 &lt;a href=&quot;url&quot;&gt;&lt;/a&gt;
 </code></pre>
@@ -186,10 +184,19 @@ body{font-size:16px;}
 and prevent event on click this
 </code></pre>
 
-<p>Link info inside our content example</p>
+<p><a name="id"></a>
+Link info inside our content example</p>
 <pre><code class="html">&lt;a href=&quot;#idReference&quot; title=&quot;Go to Reference&quot;&gt;Go to Reference&lt;/a&gt;
 (...our html content...)
 &lt;section id=&quot;idReference&quot;&gt;&lt;/section&gt;
+</code></pre>
+
+<p>Or
+<a name="name"></a></p>
+<pre><code class="html">&lt;a href=&quot;#nameReference&quot; title=&quot;Go to Reference&quot;&gt;Go to Reference&lt;/a&gt;
+(...our html content...)
+&lt;a name=&quot;nameReference&quot;&gt;&lt;/a&gt;
+&lt;section id=&quot;reference&quot;&gt;&lt;/section&gt;
 </code></pre>
 
 <h3 id="attibutes-desription">Attibutes desription</h3>

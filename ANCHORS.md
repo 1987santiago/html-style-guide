@@ -6,30 +6,27 @@ MercadoLibre HTML Style Guide
 ## Anchors
 
 ### Description
-* Define un ancla y puede ser usado como vínculo a otro documento, como un marcador, o como ambos.
+* Defines an anchor and can be used as a link to another document, such as a marker, or both.
 
 
 ### Attibutes
-<ul>
-<li><a href="#href">href</a></li>
-<li><a href="#title">title</a></li>
-<li><a href="#id">id</a></li>
-<li><a href="#name">name</a></li>
-<li><a href="#class">class</a></li>
-<li><a href="#target">[target]</a> - http://www.w3.org/TR/html4/types.html#h-6.16</li>
-<li><a href="#type">[type]</a></li>
-<li><a href="#rel">[rel]</a></li>
-<li><a href="#rev">[rev]</a></li>
-</ul>
+<a href="#href">`href`</a>
+<a href="#title">`title`</a>
+<a href="#id">`id`</a>
+<a href="#name">`name`</a>
+<a href="#class">`class`</a>
+<a href="#target">`target`</a>
+<a href="#type">`type`</a>
+<a href="#rel">`rel`</a>
 
 
 ### Basic implement
 Specific `href` and `title` attributes
 ```html
-<a href="https://github.com/mercadolibre/html-style-guide" title="Ir a la guía de html" >html-style-guide</a>
+<a href="https://github.com/mercadolibre/html-style-guide" title="Go to html style guide" >html-style-guide</a>
 ```
 
-### Uso de data attributes
+### Implement data attributes
 ```html
 <a href="http://url.original" data-some-data="sting-data" title="link with data attr"></a>
 ```
@@ -46,6 +43,7 @@ Anchors don't have auto close tag
 <a href="url" title="title-text"></a>
 ```
 
+<a name="title"></a>
 Always specific a title attribute
 ```html
 <!-- DON'T -->
@@ -80,11 +78,20 @@ Always define a url and prevent it from javascript
 and prevent event on click this
 ```
 
+<a name="id"></a>
 Link info inside our content example
 ```html
 <a href="#idReference" title="Go to Reference">Go to Reference</a>
 (...our html content...)
 <section id="idReference"></section>
+```
+Or
+<a name="name"></a>
+```html
+<a href="#nameReference" title="Go to Reference">Go to Reference</a>
+(...our html content...)
+<a name="nameReference"></a>
+<section id="reference"></section>
 ```
 
 
