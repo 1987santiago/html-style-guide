@@ -7,6 +7,7 @@ MercadoLibre HTML Style Guide
 # Table of contents
 [Forms](#forms)  
 [Anchors](#anchors)  
+[Lists](#lists)  
 
 ## Forms
 
