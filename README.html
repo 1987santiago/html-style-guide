@@ -122,6 +122,10 @@ body{font-size:16px;}
 }
 </style><title>README</title></head><body><h1 id="html-style-guide">html-style-guide</h1>
 <p>MercadoLibre HTML Style Guide</p>
+<h1 id="table-of-contents">Table of contents</h1>
+<p><a href="#forms">Forms</a><br />
+<a href="#anchors">Anchors</a><br />
+<a href="#lists">Lists</a>  </p>
 <h2 id="forms">Forms</h2>
 <h3 id="good-practices">Good practices</h3>
 <ul>
@@ -187,7 +191,7 @@ body{font-size:16px;}
 </code></pre>
 
 <ul>
-<li>Use <em>labels</em> to describe the role of the form element </li>
+<li>Use <em>labels</em> to describe the role of the form element</li>
 </ul>
 <pre><code class="html">&lt;!-- DON'T --&gt;
 name: &lt;input type=&quot;text&quot;&gt;
@@ -295,7 +299,7 @@ name: &lt;input type=&quot;text&quot;&gt;
                 &lt;/optgroup&gt;
                 &lt;option&gt;option 5&lt;/option&gt;
                 &lt;option&gt;option 6&lt;/option&gt;
-                &lt;optgroup label=&quot;optgroup 2 disabled&quot; disabled&gt;&lt;!-- In XHTML, attribute minimization is forbidden, and the disabled attribute must be defined as &lt;optgroup disabled=&quot;disabled&quot;&gt; --&gt; 
+                &lt;optgroup label=&quot;optgroup 2 disabled&quot; disabled&gt;&lt;!-- In XHTML, attribute minimization is forbidden, and the disabled attribute must be defined as &lt;optgroup disabled=&quot;disabled&quot;&gt; --&gt;
                     &lt;option&gt;option 7.1&lt;/option&gt;
                     &lt;option&gt;option 7.2&lt;/option&gt;
                     &lt;option&gt;option 7.3&lt;/option&gt;
@@ -320,44 +324,280 @@ name: &lt;input type=&quot;text&quot;&gt;
 &lt;/form&gt;
 </code></pre>
 
-<h2 id="new-attibutes">New attibutes</h2>
+<h3 id="new-attibutes">New attibutes</h3>
 <ul>
-<li><code>autocomplete</code> - <em>(only if the type attr isn't <code>hidden</code> <code>checkbox</code> <code>radio</code> <code>file</code> or button type <code>button</code> <code>submit</code> <code>reset</code> <code>image</code>)</em> </li>
-<li><code>pattern</code> - A regular expression. Validate the input content when is used with tel, search, url, and email input types </li>
-<li><code>placeholder</code> - A hint to the user of what can be entered in the control </li>
-<li><code>required</code> - This attribute specifies that the user must fill in a value before submitting a form. <em>(not apply for hidden, image, submit, reset or button types)</em> </li>
+<li><code>autocomplete</code> - <em>(only if the type attr isn't <code>hidden</code> <code>checkbox</code> <code>radio</code> <code>file</code> or button type <code>button</code> <code>submit</code> <code>reset</code> <code>image</code>)</em></li>
+<li><code>pattern</code> - A regular expression. Validate the input content when is used with tel, search, url, and email input types</li>
+<li><code>placeholder</code> - A hint to the user of what can be entered in the control</li>
+<li><code>required</code> - This attribute specifies that the user must fill in a value before submitting a form. <em>(not apply for hidden, image, submit, reset or button types)</em></li>
 </ul>
 <p><strong>Inputs</strong></p>
 <ul>
-<li><code>list</code> - The value must be the id of a <code>&lt;datalist&gt;</code> element in the same document 
-<em>(This attribute is ignored when the type attribute's value is hidden, checkbox, radio, file, or a button type)</em> </li>
-<li><code>form</code> - A <em>String</em> indicating which <code>&lt;form&gt;</code> element this input is part of. An input can only be in one form. <em>(The value must be the id of a form)</em> </li>
-<li><code>formmethod</code> - A <em>String</em> define which method (get/post) should be used when submitting. <strong>It overrides the form method</strong>, if defined. <em>(only applies for type image or submit, when the form attribute has been set)</em> </li>
-<li><code>formaction</code> - A <em>String</em> define the URI should be used to processes the information. <strong>It overrides the form action</strong>, if defined. <em>(only applies for type image or submit, when the form attribute has been set)</em> </li>
+<li><code>list</code> - The value must be the id of a <code>&lt;datalist&gt;</code> element in the same document
+<em>(This attribute is ignored when the type attribute's value is hidden, checkbox, radio, file, or a button type)</em></li>
+<li><code>form</code> - A <em>String</em> indicating which <code>&lt;form&gt;</code> element this input is part of. An input can only be in one form. <em>(The value must be the id of a form)</em></li>
+<li><code>formmethod</code> - A <em>String</em> define which method (get/post) should be used when submitting. <strong>It overrides the form method</strong>, if defined. <em>(only applies for type image or submit, when the form attribute has been set)</em></li>
+<li><code>formaction</code> - A <em>String</em> define the URI should be used to processes the information. <strong>It overrides the form action</strong>, if defined. <em>(only applies for type image or submit, when the form attribute has been set)</em></li>
 </ul>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Browser_compatibility">Browser compatibility</a></p>
 <h2 id="new-attibutes-values">New attibutes values</h2>
-<ul>
-<li>For <code>type</code> attr  </li>
-</ul>
-<p><code>email</code>
-<code>date</code>
-<code>datetime</code>
-<code>number</code>
-<code>range</code>
-<code>search</code><br />
-<code>tel</code> 
-<code>url</code> </p>
-<ul>
-<li>For <code>accept</code> attr <em>(if type attr is <code>file</code>)</em></li>
-</ul>
-<p><code>audio</code>
-<code>image</code> 
-<code>video</code></p>
+<blockquote>
+<p>For <code>type</code> attr<br />
+<code>email</code> <code>date</code> <code>datetime</code> <code>number</code> <code>range</code> <code>search</code> <code>tel</code> <code>url</code></p>
+<p>For <code>accept</code> attr <em>(if type attr is <code>file</code>)</em><br />
+<code>audio</code> <code>image</code> <code>video</code></p>
+</blockquote>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Browser_compatibility">Browser compatibility</a></p>
 <h4 id="bibliografia">Bibliografía</h4>
 <p><em><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/</a></em>
 <em><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms</a></em>
 <em><a href="http://www.w3.org/TR/html401/interact/forms.html">http://www.w3.org/TR/html401/interact/forms.html</a></em>
 <em><a href="http://www.tutorialspoint.com/html5/">http://www.tutorialspoint.com/html5/</a></em>
-<em><a href="http://html5doctor.com/">http://html5doctor.com/</a></em></p></body></html>
+<em><a href="http://html5doctor.com/">http://html5doctor.com/</a></em></p>
+<h2 id="anchors">Anchors</h2>
+<h3 id="description">Description</h3>
+<ul>
+<li>Defines an anchor and can be used as a link to another document, such as a marker, or both.</li>
+</ul>
+<h3 id="attibutes">Attibutes</h3>
+<p><a href="#href"><code>href</code></a>
+<a href="#title"><code>title</code></a>
+<a href="#id"><code>id</code></a>
+<a href="#name"><code>name</code></a>
+<a href="#class"><code>class</code></a>
+<a href="#target"><code>target</code></a>
+<a href="#type"><code>type</code></a>
+<a href="#rel"><code>rel</code></a></p>
+<h3 id="basic-implement">Basic implement</h3>
+<p>Specific <code>href</code> and <code>title</code> attributes</p>
+<pre><code class="html">&lt;a href=&quot;https://github.com/mercadolibre/html-style-guide&quot; title=&quot;Go to html style guide&quot; &gt;html-style-guide&lt;/a&gt;
+</code></pre>
+
+<h3 id="implement-data-attributes">Implement data attributes</h3>
+<pre><code class="html">&lt;a href=&quot;http://url.original&quot; data-some-data=&quot;sting-data&quot; title=&quot;link with data attr&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<h3 id="good-practices_1">Good Practices</h3>
+<p>Anchors don't have auto close tag</p>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;a href=&quot;url&quot; title=&quot;title-text&quot; /&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;a href=&quot;url&quot; title=&quot;title-text&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<p><a name="title"></a>
+Always specific a title attribute</p>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;a href=&quot;url&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;a href=&quot;url&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<p>Never use other element if you want link any info</p>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;span id=&quot;link&quot; onclick=&quot;window.open('url')&quot; &gt;&lt;/span&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;a href=&quot;url&quot; title=&quot;title-link&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<p>Always define a url and prevent it from javascript</p>
+<pre><code class="html">&lt;!-- DON'T --&gt;
+&lt;a href=&quot;javscript:void();&quot; &gt;&lt;/a&gt;
+</code></pre>
+
+<pre><code class="html">&lt;!-- DO --&gt;
+&lt;a href=&quot;http://www.url.bla&quot; title=&quot;title-link&quot;&gt;&lt;/a&gt;
+and prevent event on click this
+</code></pre>
+
+<p><a name="id"></a>
+Link info inside our content example</p>
+<pre><code class="html">&lt;a href=&quot;#idReference&quot; title=&quot;Go to Reference&quot;&gt;Go to Reference&lt;/a&gt;
+(...our html content...)
+&lt;section id=&quot;idReference&quot;&gt;&lt;/section&gt;
+</code></pre>
+
+<p>Or
+<a name="name"></a></p>
+<pre><code class="html">&lt;a href=&quot;#nameReference&quot; title=&quot;Go to Reference&quot;&gt;Go to Reference&lt;/a&gt;
+(...our html content...)
+&lt;a name=&quot;nameReference&quot;&gt;&lt;/a&gt;
+&lt;section id=&quot;reference&quot;&gt;&lt;/section&gt;
+</code></pre>
+
+<h3 id="attibutes-desription">Attibutes desription</h3>
+<h4 id="target">Target</h4>
+<p><span id="target"></span></p>
+<h6 id="possible-values">Possible values</h6>
+<ul>
+<li><code>_blank</code> - <em>Open linked document in new windows or tab</em></li>
+<li><code>_self</code> - <em>It's a default, open linked document in the same context</em></li>
+<li><code>_parent</code> - <em>Open linked document in the parent frame</em></li>
+<li><code>_top</code> - <em>Open linked document in the top level of current context frame</em></li>
+</ul>
+<h4 id="bibliografia_1">Bibliografía</h4>
+<p>http://www.htmlquick.com/es/reference/tags/a.html
+http://www.htmlquick.com/es/reference/mime-types.html
+http://www.htmlquick.com/es/reference/types.html#frame-target
+http://stackoverflow.com/questions/11009597/correct-implementation-of-anchor-tag
+http://line25.com/articles/10-html-tag-crimes-you-really-shouldnt-commit
+http://stackoverflow.com/questions/134845/href-attribute-for-javascript-links-or-javascriptvoid0
+http://moz.com/learn/seo/anchor-text
+http://www.w3.org/TR/html4/types.html#h-6.16
+http://stackoverflow.com/questions/4964130/target-blank-vs-target-new
+http://www.w3.org/html/wg/drafts/html/master/Overview.html</p>
+<h2 id="lists">Lists</h2>
+<p>Used to enumerate(list) information, which determines the type of list used.</p>
+<h3 id="types">Types</h3>
+<ul>
+<li><code>&lt;ul&gt;</code> - unorderer list</li>
+<li><code>&lt;ol&gt;</code> - orderer list</li>
+<li><code>&lt;dl&gt;</code> - description list</li>
+</ul>
+<h4 id="unorderer-lists">Unorderer Lists</h4>
+<p>Used to list information that does not require a particular order. <em>Eg. List of payment methods.</em></p>
+<p>html structure</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;MercadoPago&lt;li&gt;
+    &lt;li&gt;Efectivo&lt;li&gt;
+    &lt;li&gt;Transferencia bancaria&lt;li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>Result
+<em> MercadoPago
+</em> Efectivo
+* Transferencia bancaria</p>
+<h6 id="attributes-of-this-type-of-list">Attributes of this type of list</h6>
+<blockquote>
+<p>The <code>type</code> attribute is deprecated in HTML5</p>
+</blockquote>
+<h4 id="orderer-lists">Orderer Lists</h4>
+<p>Used to list items that need an order. <em>Eg: Steps to buying.</em></p>
+<p>html structure</p>
+<pre><code>&lt;ol&gt;
+    &lt;li&gt;Offert&lt;li&gt;
+    &lt;li&gt;Select a payment method&lt;/li&gt;
+    &lt;li&gt;Select a shipment method&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+<p>Result</p>
+<ol>
+<li>
+<p>Offert</p>
+</li>
+<li>
+<p>Select a payment method</p>
+</li>
+<li>
+<p>Select a s_hipment method</p>
+</li>
+</ol>
+<h6 id="attributes-of-this-type-of-list_1">Attributes of this type of list</h6>
+<blockquote>
+<ul>
+<li><code>start</code> Specifies the start value <code>@param type Number</code></li>
+<li><code>type</code> Specifies the kind of marker to use in the list <code>@params type String</code> <code>values: a A i I 1</code></li>
+<li><code>reversed</code> Specifies that the list order should be descending <code>@param type Strign</code> <code>value: "reversed"</code></li>
+</ul>
+</blockquote>
+<h4 id="definition-lists">Definition Lists</h4>
+<p>This list is recommended for use when the information has a relevant title or concept, in addition to its content.
+It has a title <code>&lt;dt&gt;</code> and description <code>&lt;dd&gt;</code>.</p>
+<p>html structure</p>
+<pre><code>&lt;dl&gt;
+    &lt;dt&gt;Tipo de artículo:&lt;/dt&gt;
+        &lt;dd&gt;Artículo nuevo&lt;/dd&gt;
+    &lt;dt&gt;Vendidos:&lt;/dt&gt;
+        &lt;dd&gt;1 vendido&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+
+<p>Result</p>
+<p>···· <strong>Tipo de artículo:</strong></p>
+<p>···· ···· Artículo nuevo</p>
+<p>···· <strong>Vendidos:</strong></p>
+<p>···· ···· 1 vendido</p>
+<h3 id="good-practices_2">Good practices</h3>
+<p>- Use lists to create lists, don`t use other elements to this purpose</p>
+<pre><code>&lt;!-- DON'T --&gt;
+&lt;ul&gt;
+    &lt;!-- simple link --&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;!-- Breadcrumb  --&gt;
+        &lt;span&gt;... &amp;gt;&lt;/span&gt;
+        &lt;span&gt;... &amp;gt;&lt;/span&gt;
+        &lt;span&gt;... &amp;gt;&lt;/span&gt;
+        &lt;span&gt;...&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code>&lt;!-- DO --&gt;
+&lt;div&gt;
+    &lt;!-- simple link --&gt;
+    &lt;a href=&quot;#&quot;&gt;...&lt;/a&gt;
+    &lt;ul&gt;
+        &lt;!-- Breadcrumb --&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        &lt;li&gt;...&lt;/li&gt;
+    &lt;ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+<ul>
+<li>Using the correct type of list, according to the needs of the information</li>
+</ul>
+<pre><code>&lt;!-- DON'T --&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;span class=&quot;title&quot;&gt;...&lt;/span&gt;
+        &lt;span class=&quot;data&quot;&gt;...&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;span class=&quot;title&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;data&quot;&gt;&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code>&lt;!-- DO --&gt;
+&lt;dl&gt;
+    &lt;dt&gt;...&lt;dt&gt;
+    &lt;dd&gt;...&lt;/dd&gt;
+    &lt;dt&gt;...&lt;dt&gt;
+    &lt;dd&gt;...&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+
+<pre><code>&lt;!-- DON'T --&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;span class=&quot;num&quot;&gt;1&lt;/span&gt;
+        ...
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;span class=&quot;num&quot;&gt;2&lt;/span&gt;
+        ...
+    &lt;/li&gt;
+&lt;ul&gt;
+</code></pre>
+
+<pre><code>&lt;!-- DO --&gt;
+&lt;ol&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;ol&gt;
+</code></pre></body></html>

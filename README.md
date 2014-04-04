@@ -388,9 +388,7 @@ Used to enumerate(list) information, which determines the type of list used.
 
 #### Unorderer Lists
 
-Used to list information that does not require a particular order.
-
-Eg. List of payment methods.
+Used to list information that does not require a particular order. _Eg. List of payment methods._
 
 html structure
 ```
@@ -405,12 +403,12 @@ Result
 * Efectivo
 * Transferencia bancaria
 
+###### Attributes of this type of list
+> The `type` attribute is deprecated in HTML5
 
 #### Orderer Lists
 
-Used to list items that need an order.
-
-Eg: Steps to buying.
+Used to list items that need an order. _Eg: Steps to buying._
 
 html structure
 ```
@@ -421,9 +419,17 @@ html structure
 </ol>
 ```
 Result
+
 1. Offert
+
 2. Select a payment method
-3. Select a shipment method
+
+3. Select a s_hipment method
+
+###### Attributes of this type of list
+> - `start` Specifies the start value `@param type Number`
+> - `type` Specifies the kind of marker to use in the list `@params type String` `values: a A i I 1`
+> - `reversed` Specifies that the list order should be descending `@param type Strign` `value: "reversed"`
 
 #### Definition Lists
 
@@ -448,3 +454,84 @@ Result
 ···· __Vendidos:__
 
 ···· ···· 1 vendido
+
+### Good practices
+
+- Use lists to create lists, don`t use other elements to this purpose
+
+```
+<!-- DON'T -->
+<ul>
+	<!-- simple link -->
+	<li>
+		<a href="#">...</a>
+	</li>
+	<li>
+		<!-- Breadcrumb  -->
+		<span>... &gt;</span>
+		<span>... &gt;</span>
+		<span>... &gt;</span>
+		<span>...</span>
+	</li>
+</ul>
+```
+```
+<!-- DO -->
+<div>
+	<!-- simple link -->
+	<a href="#">...</a>
+	<ul>
+		<!-- Breadcrumb -->
+		<li>...</li>
+		<li>...</li>
+		<li>...</li>
+		<li>...</li>
+	<ul>
+</div>
+```
+
+- Using the correct type of list, according to the needs of the information
+
+```
+<!-- DON'T -->
+<ul>
+	<li>
+		<span class="title">...</span>
+		<span class="data">...</span>
+	</li>
+	<li>
+		<span class="title"></span>
+		<span class="data"></span>
+	</li>
+</ul>
+```
+```
+<!-- DO -->
+<dl>
+	<dt>...<dt>
+	<dd>...</dd>
+	<dt>...<dt>
+	<dd>...</dd>
+</dl>
+```
+
+```
+<!-- DON'T -->
+<ul>
+	<li>
+		<span class="num">1</span>
+		...
+	</li>
+	<li>
+		<span class="num">2</span>
+		...
+	</li>
+<ul>
+```
+```
+<!-- DO -->
+<ol>
+	<li>...</li>
+	<li>...</li>
+<ol>
+```
